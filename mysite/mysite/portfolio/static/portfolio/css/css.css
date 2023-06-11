@@ -1,0 +1,346 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+
+
+  body {
+
+    font-size: 1.21em;
+    margin:0
+  }
+  @media screen and (max-width: 767px) {
+    body {
+      font-size: 0.8rem;
+    }
+    #bemvindo {
+      font-size: 3rem;
+
+  }
+
+  }
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+
+
+
+
+  #bemvindo{
+    animation: slide-in 2500ms;
+    top: 60px;
+      transform: rotate(20deg);
+
+  }
+
+  .primeiro {
+    z-index: 1;
+    height: 80vh;
+    background-image: url("https://source.unsplash.com/_kUxT8WkoeY");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    align-items: start;
+    text-align: center;
+    color: white;
+    padding: 10px;
+
+  }
+
+  .primeiro h1{
+    padding: 100px;
+    text-align: center;
+    justify-content: center;
+
+    position: relative;
+    font-size: 4rem;
+    color: white;
+}
+  #footer {
+
+    font-size: 1rem;
+    height: 4vh;
+    border: 4px solid #696767;
+    color: rgb(255, 255, 255);
+    background-color:#7393B3;
+    position: fixed;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+  }
+
+  #button{
+  border: none;
+  background: none;
+    size: 10px;
+    position: sticky;
+    z-index: 2;
+  color: navy;
+  }
+
+
+  .menu-btn {
+   background-color: #7393B3;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border: 4px solid #696767; border: none;
+
+ }
+ .dropdown-menu {
+    position: relative;
+    display: inline-block;
+
+ }
+ .menu-content {
+    display: none;
+    position: absolute;
+    background-color: #5a6674;
+    min-width: 160px;
+    z-index: 1;
+  border: 4px solid #696767;
+ }
+ #nav{
+   position: fixed;
+   border: 4px solid #696767;
+    background-color: #7393B3;
+    border :4px solid #65696d;
+  z-index: 2;
+  justify-content: center;
+   width: 100%;}
+ .links,.links-hidden{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+ }
+ .links-hidden{
+    display: block;
+ }
+ .links{
+    display: inline-block;
+ }
+ .links-hidden:hover,.links:hover {
+    background-color: rgb(72, 77, 74);
+ }
+ .dropdown-menu:hover .menu-content {
+    display: block;
+ }
+ .dropdown-menu:hover .menu-btn {
+  background-color: rgb(72, 77, 74);
+ }
+ .calculator {
+  background-attachment: fixed;
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 200px;
+   padding: 20px;
+   background-color: #7393B3;
+   border: 4px solid #7393B3;
+   display: flex;
+   border: 4px solid #696767;
+   background-image: url("numbers-2.jpg");
+   background-repeat: no-repeat;
+ }
+
+ input {
+   width: 100%;
+   margin-bottom: 10px;
+   padding: 10px;
+   font-size: 18px;
+   background-color: #b7c2c4;
+
+ }
+
+ button {
+  margin-bottom: 10px;
+  padding: 10px;
+   font-size: 30px;
+   background-color: transparent;
+   font-weight: 900;
+   font-weight: 1000;
+   color: rgb(255, 255, 255);
+   border: none;
+   cursor: pointer;
+
+ }
+
+ button:hover {
+   background-color: #d1874a;
+ }
+
+ #result {
+   font-size: 24px;
+ }
+ .my-image-container {
+  position: relative;
+  display: inline-block;
+  background-size: cover;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+background-color: #7393B3;
+ }
+
+ .my-caption-container {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   align-items: center;
+
+   transform: translate(-50%, -50%);
+   flex-direction: column;
+   padding: 20px;
+   text-align: center;
+ }
+ #imagem{
+  filter: brightness(60%);
+ }
+ input#my-caption {
+   width: 100%;
+   margin-bottom: 10px;
+   padding: 10px;
+   font-size: 18px;
+
+ }
+
+ button.add-my-caption {
+   margin-bottom: 10px;
+   padding: 10px;
+   font-size: 18px;
+   background-color: #7393B3;
+   color: rgb(255, 255, 255);
+   border: none;
+   cursor: pointer;
+ }
+ #projectos{
+  background-color:#7393B3 ;
+ }
+
+ button.add-my-caption:hover {
+   background-color: #7393B3;
+ }
+
+ div#my-caption-text {
+   font-size: 35px;
+   color: white;
+   top: 100px;
+ }
+
+
+ .nome {
+  color: white;
+  background-color: #7393B3;
+  border: 4px solid #696767;
+ }
+ .data{
+
+background-color: #7393B3;
+color: white;
+border: 4px solid #696767;
+}
+
+
+#templateprojects{
+  background-color: #7393B3;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 25px 100px;
+  border: 4px solid #696767;
+}
+#templateprojects{
+  display: flex;
+  flex-direction: row;
+}
+#templateprojects > * {
+  font-size: 1rem;
+  width: 250px;   height: 150px;
+  padding: 25px;  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px grey;
+}
+
+
+
+.templatcadeiras{
+  background-color: #7393B3;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 25px 100px;
+  border: 4px solid #696767;
+}
+.templatcadeiras{
+  display: flex;
+  flex-direction: row;
+}
+.templatcadeiras > * {
+  font-size: 1rem;
+  width: 250px;   height: 150px;
+  padding: 25px;  margin: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px grey;
+}
+
+#sobremim{
+  background-color: #7393B3;
+  color: white;
+
+}
+#aptidoes {
+  background-color: #7393B3;
+color: white;
+border: 4px solid #696767;
+
+}
+#tecnologias{
+
+  background-color: #7393B3;
+  color: white;
+}
+#lastbeforefooter{
+  padding: 50px;
+  font-weight: bold;
+  background-color:#4d5c6b; ;
+  border: 4px solid #696767;
+  color: rgb(70, 179, 223);
+
+}
+#labs{
+  font-weight: bold;
+  background-color:#4d5c6b; ;
+  border: 4px solid #696767;
+  color: rgb(70, 179, 223);
+}
+ .pythonprojectos {
+            background-color: #7393B3;
+            border: 4px solid #696767;
+            color: white;
+        }

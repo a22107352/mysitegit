@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'portfolio/css/css.css' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&family=Tilt+Prism&display=swap" rel="stylesheet">
+
+<head>
+
+<meta charset="UTF-8">
+
+
+   <header id="header">
+
+    <nav id = "nav">
+      <button  id = "button"><svg id ="darkmode"xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cloud-sun" viewBox="0 0 16 16">
+        <path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
+         <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+       </svg></button>
+      <a class="links" href="#header">landing page</a>
+      <a class="links" href="#expression">JS</a>
+      <a class="links" href="#aptidoes">Sobre mim</a>
+      <a class="links" href="{% url 'blog_view' %}">Blog</a>
+      <a class="links" href="{% url 'login' %}">projetos e cadeiras</a>
+      <a class="links" href="{% url 'portfolio:chart' %}">Webscrapping</a>
+      <div class="dropdown-menu">
+      <button class="menu-btn">programação Web</button>
+      <div class="menu-content">
+      <a class="links-hidden" href="#tecnologias">tecnologias existentes</a>
+      <a class="links-hidden" href="#lastbeforefooter">laboratórios</a>
+      <a class="links-hidden" href="#lastbeforefooter">Contactos</a>
+      </div>
+      </div>
+      </nav>
+
+  </header>
+
+
+  <script src="head.js"></script>
+</head>
+<body>
+  <meta charset="UTF-8">
+
+  <article class="primeiro">
+
+
+   <h1 id="bemvindo" >
+    bem vindo
+   </h1>
+   <p>Ao decidir cursar Engenharia Informática, diversas motivações podem ter influenciado a minha escolha. Uma delas é a paixão pela tecnologia e pela computação, que são áreas em constante evolução e que oferecem muitas possibilidades de inovação e transformação na sociedade.</p><br>
+      <p>No curso de Engenharia Informática, existem muitos conteúdos interessantes que me despertam a curiosidade e o meu interesse. Uma das áreas que mais me têm chamado á atenção é a inteligência artificial, que oferece muitas possibilidades de aplicação em diferentes setores, desde a saúde até á indústria.</p><br>
+      <p>Em relação às minhas qualidades pessoais, é importante destacar a capacidade de resolução de problemas, a criatividade, o trabalho em equipa e a habilidade de comunicação, que são fundamentais para o sucesso na área de Engenharia Informática.</p><br>
+      <p>Quanto às expectativas após o término do curso, espero ter a oportunidade de trabalhar em empresas de tecnologia ou em startups, participando do desenvolvimento de soluções inovadoras e contribuindo para a transformação digital de diferentes setores.</p><br>
+
+  </article>
+
+
+
+  <footer id="footer">
+
+    <p>| henriquempgf@gmail.com | Henrique Franco | 2ºano | Universidade Lusófona |</p>
+
+  </footer>
+
+  <div class="calculator">
+    <input type="text" id="expression" placeholder="Digite o seu calculo">
+    <button onclick="calculate()">Calcular</button>
+    <button onclick="clearResult()">Apagar resultado</button>
+    <div id="result"></div>
+  </div>
+
+  <div class="my-image-container">
+    <img id ="Imagem" src="https://source.unsplash.com/U2eUlPEKIgU" alt="Imagem inspiradora">
+
+
+    <div class="my-caption-container">
+      <input type="text" id="my-caption" placeholder="Escreva uma legenda">
+      <button onclick="addMyCaption()">Por Legenda</button>
+      <div id="my-caption-text"></div>
+    </div>
+  </div>
+  <div class ="nome">
+  <form>
+    <p>Insira o seu nome:</p>
+    <input type="text" id="nome">
+    <br>
+    <br>
+    <p>O Seu nome é:</p>
+    <span id="nome1"></span>
+    <br>
+    <br>
+    <p>O Seu nome é:</p>
+    <span id="nome2"></span>
+    <br>
+    <br>
+    <p>O Seu nome é:</p>
+    <span id="nome3"></span>
+    <br>
+    <br>
+    <button type="button" onclick="exibirNome()">Exibir Nome</button>
+  </form>
+
+</div>
+<div class="data">
+
+<p>Data de Hoje</p>
+<p>Data:  <span id="data"></span></p>
+</div>
+ <style>
+ .pythonprojectos {
+            background-color: #7393B3;
+            border: 4px solid #696767;
+            color: white;
+        }
+    </style>
+<article class = "pythonprojectos">
+
+    <h1>Lista de Projetos e Cadeiras</h1>
+
+    <h2>Projetos:</h2>
+    <ul>
+        {% for projeto in projetos %}
+        <li> Titulo :{{ projeto.titulo }}
+              Descrição: {{ projeto.descricao }}
+        </li>
+
+
+        {% endfor %}
+    </ul>
+
+    <h2>Cadeiras:</h2>
+    <ul>
+        {% for cadeira in cadeiras %}
+        <li> Nome:  {{ cadeira.nome }}
+        Ranking:{{ cadeira.ranking }}
+         Ects:{{ cadeira.ects }}</li>
+        {% endfor %}
+    </ul>
+</article>
+
+
+  <div id="aptidoes">
+  <h1>Aptidões e competências pessoais</h1>
+  <p>Técnologias já utilizadas: kotlin,java,c,html e css,javascript</p>
+ <p>Competências organizacionais: boa gestão de tempo, atitude positiva mesmo na advercidade, boa resiliência e resolução de problemas,capacidade para trabalhar em equipa e boas capacidades de liderança</p>
+ <p>Tenho vindo a desenvolver ao longo dos anos a minha capacidade de adaptabilidade,resolução de conflitos, cooperação,resolução de problemas, gestão de tempo e o saber ouvir </p>
+ <p>linguas fluentes: Inglês e Português</p>
+<p>interesses: leitura, video-jogos, filmes, séries, passar tempo com amigos e familia</p>
+
+<h1 id="projectos">projectos</h1>
+<p>jogo das tendas(2022 ,fundamentos de programação,Henrique Franco); deisijungle(2023 linguagens de programação II, Henrique Franco e Filipe Oliveira)</p>
+<p>Deisijungle : Certo dia, numa savana muito (muito) longe daqui, os animais decidiram descobrir quem seria
+  o melhor atleta entre eles. Para o fazer, definiram um conjunto de provas desportivas que iriam
+  disputar entre si - quem vencesse mais provas seria considerado o Rei da Selva. Rapidamente
+  a notícia chegou ao Tarzan, que não quis deixar de participar nas provas, convencido de que
+  facilmente as venceria.
+  A primeira prova a disputar é a prova de atletismo. Os animais vão-se reunir numa pista e
+  competir para determinar qual o melhor atleta.</p>
+<p>jogo das tendas :Ponha uma tenda ao lado de cada árvore neste jogo.
+
+  Os números ao redor da grade indicam quantas tendas cada fileira e coluna precisa. Mas cuidado, as tendas não podem se tocar.
+
+  Não chute! Use a lógica e planeje os seus movimentos com cuidado. Cada nível tem apenas uma solução única. Crie as suas próprias estratégias para resolver grades maiores e níveis mais desafiadores. </p>
+</div>
+
+
+
+</div>
+<div id="tecnologias">
+  <h1>Tecnologias de Desenvolvimento Web</h1>
+  <h2>Back-end</h2>
+  <ul>
+    <li>
+      <strong>Laravel</strong> (2011)<br>
+      Criador: Taylor Otwell<br>
+      <a href="https://laravel.com/">https://laravel.com/</a><br>
+      Laravel é um framework de código aberto para desenvolvimento web em PHP. Ele oferece uma estrutura robusta e elegante para a construção de aplicativos web de alta qualidade com recursos como roteamento, migrações de banco de dados, autenticação de usuários e gerenciamento de sessão.
+    </li>
+    <li>
+      <strong>ASP.NET</strong> (2002)<br>
+      Criador: Microsoft<br>
+      <a href="https://dotnet.microsoft.com/apps/aspnet">https://dotnet.microsoft.com/apps/aspnet</a><br>
+      ASP.NET é um framework de desenvolvimento web criado pela Microsoft para a construção de aplicativos escaláveis e seguros. Ele suporta várias linguagens de programação, incluindo C# e Visual Basic, e oferece recursos poderosos, como suporte a AJAX, autenticação de usuários, gerenciamento de sessão e muito mais.
+    </li>
+    <li>
+      <strong>Spring MVC</strong> (2004)<br>
+      Criador: Pivotal Software<br>
+      <a href="https://spring.io/">https://spring.io/</a><br>
+      Spring MVC é um framework de desenvolvimento web baseado em Java que oferece uma estrutura robusta e modular para a construção de aplicativos web escaláveis e seguros. Ele suporta vários protocolos de comunicação, incluindo HTTP, TCP e UDP, e oferece recursos como injeção de dependência, gerenciamento de transações e muito mais.
+    </li>
+    <li>
+      <strong>Express</strong> (2010)<br>
+      Criador: TJ Holowaychuk<br>
+      <a href="https://expressjs.com/">https://expressjs.com/</a><br>
+      Express é um framework de desenvolvimento web para Node.js que oferece uma estrutura simples e flexível para a construção de aplicativos web escaláveis e eficientes. Ele suporta vários recursos, como roteamento, middleware e gerenciamento de sessão.
+    </li>
+    <li>
+      <strong>Django</strong> (2005)<br>
+      Criador: Django Software Foundation<br>
+      <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a><br>
+      Django é um framework de desenvolvimento web baseado em Python que oferece uma estrutura completa e poderosa para a construção de aplicativos web escaláveis e seguros. Ele suporta recursos como roteamento, ORM (Object-Relational Mapping), autenticação de usuários, administração do site e muito mais.
+    </li>
+  </ul>
+
+  <h2>Front-end</h2>
+  <ul>
+    <li>
+      <strong>Angular</strong><br>
+      Criador: Google<br>
+      <a href="https://angular.io/">https://angular.io/</a><br>
+      Angular é um framework de desenvolvimento front-end criado pela Google que oferece uma estrutura completa para a construção de aplicativos web escaláveis e complexos. Ele usa TypeScript para tornar o código mais seguro e legível, e oferece recursos como componentes, diretivas, serviços e muito mais.
+    </li>
+    <li>
+      <strong>React</strong><br>
+      Criador: Facebook<br>
+      <a href="https://reactjs.org/">https://reactjs.org/</a><br>
+      React é uma biblioteca de desenvolvimento front-end criada pelo Facebook para a construção de interfaces de usuário escaláveis e eficientes. Ele usa JSX para permitir que os desenvolvedores escrevam código HTML em JavaScript, e oferece recursos como componentes, estado e props.
+    </li>
+    <li>
+      <strong>Vue</strong><br>
+      Criador: Evan You<br>
+      <a href="https://vuejs.org/">https://vuejs.org/</a><br>
+      Vue é um framework de desenvolvimento front-end criado para a construção de aplicativos web reativos e eficientes. Ele usa templates HTML para renderizar o conteúdo e oferece recursos como componentes, diretivas, gerenciamento de estado e muito mais.
+    </li>
+    <li>
+      <strong>Svelte</strong><br>
+      Criador: Rich Harris<br>
+      <a href="https://svelte.dev/">https://svelte.dev/</a><br>
+      Svelte é um framework de desenvolvimento front-end criado para a construção de aplicativos web reativos e eficientes. Ele usa uma abordagem diferente de outros frameworks, onde o código é compilado durante a compilação, em vez de ser executado no navegador do usuário. Isso resulta em aplicativos mais rápidos e eficientes.
+    </li>
+  </ul>
+
+  <h2>Outras</h2>
+  <ul>
+    <li>
+      <strong>WordPress</strong><br>
+      Criador: Automattic<br>
+      <a href="https://wordpress.org/">https://wordpress.org/</a><br>
+      WordPress é um sistema de gerenciamento de conteúdo (CMS) de código aberto para a criação de sites e blogs. Ele oferece uma ampla variedade de recursos e temas personalizáveis, tornando-o uma das plataformas de publicação mais populares da web.
+    </li>
+    <li>
+      <strong>OutSystems</strong><br>
+      Criador: OutSystems<br>
+      <a href="https://www.outsystems.com/">https://www.outsystems.com/</a><br>
+      OutSystems é uma plataforma de desenvolvimento de aplicativos de baixo código que permite que as empresas criem aplicativos empresariais personalizados de forma rápida e eficiente, sem a necessidade de programação manual. Ele oferece recursos como modelagem visual, integração de dados, publicação de aplicativos e muito mais.
+    </li>
+    <li>
+      <strong>Weebly</strong><br>
+      Criador: Square, Inc.<br>
+      <a href="https://www.weebly.com/">https://www.weebly.com/</a><br>
+      Weebly é uma plataforma de construção de sites e lojas virtuais que oferece uma interface fácil de usar e recursos de design flexíveis. Ele permite que os usuários criem sites com rapidez e facilidade, sem a necessidade de conhecimentos avançados em programação ou design.
+</li>
+<li>
+<strong>Wix</strong><br>
+Criador: Wix.com Ltd.<br>
+<a href="https://www.wix.com/">https://www.wix.com/</a><br>
+Wix é uma plataforma de construção de sites que oferece uma interface intuitiva de arrastar e soltar para a criação de sites e lojas virtuais. Ele oferece recursos como hospedagem, modelos personalizáveis, ferramentas de SEO e muito mais, tornando-o uma escolha popular para pequenas empresas e indivíduos.
+</li>
+</ul>
+<li >
+  <strong>técnicas e efeitos que gosto:</strong>
+  <p>Design responsivo para que o site se adapte a diferentes tamanhos de tela;
+    Carregamento rápido para melhorar a experiência do usuário;
+    Uso de navegação intuitiva para facilitar a navegação do usuário;
+    Uso de animações sutis para dar vida ao site;
+    Uso de ícones e gráficos para melhorar a compreensão e a apresentação de informações;
+    Uso de fontes legíveis e em tamanhos adequados para melhorar a legibilidade do conteúdo;
+    Uso de recursos de acessibilidade para garantir que o site seja acessível a todos os usuários, incluindo aqueles com deficiências visuais ou motoras.</p>
+  <strong> Erros de alguns sites:</strong>
+  <p>Uso excessivo de pop-ups e anúncios invasivos que distraem e irritam o usuário;
+    Excesso de animações e efeitos que tornam o site lento e difícil de usar;
+    Uso de fontes muito pequenas ou difíceis de ler;
+    Uso de cores e design confusos que tornam o site desagradável aos olhos;
+    Uso de imagens de baixa qualidade ou desatualizadas;
+    Uso de texto muito longo ou difícil de entender;
+    Falta de navegação intuitiva e informações desorganizadas.</p>
+  <strong>Tendências Modernas de Programação Web:</strong>
+
+<p>Uso de bibliotecas de JavaScript, como React e Angular, para criar interfaces de usuário interativas e responsivas;
+  Uso de frameworks de CSS, como Bootstrap e Materialize, para criar designs modernos e responsivos;
+  Uso de APIs RESTful para integrar dados de diferentes fontes em um aplicativo web;
+  Uso de técnicas de inteligência artificial, como aprendizado de máquina e processamento de linguagem natural, para criar aplicativos mais inteligentes e personalizados;
+  Uso de tecnologias de Progressive Web App (PWA) para oferecer uma experiência semelhante a um aplicativo em um site.</p>
+<strong>Aspectos Obsoletos:</strong>
+
+<p>Uso de tabelas para layout;
+  Uso de frames e iframes;
+  Uso de tags HTML obsoletas, como font e center;
+  Uso de animações em Flash;
+  Uso de codificação de estilo inline;
+  Uso de codificação de JavaScript em linha;
+  Não suporte para dispositivos móveis.</p>
+</li>
+</div>
+
+
+
+<div>
+
+
+</div>
+<div id="labs">
+  <h1>laboratórios</h1>
+
+  <p>Lab1/2:http://lab2.pythonanywhere.com</p>
+  <p>Lab3:http://lab3.pythonanywhere.com</p>
+  <p>Lab4:http://lab4.pythonanywhere.com</p>
+
+
+
+</div>
+<div id="lastbeforefooter">
+<h1>Contactos</h1>
+<p>Linkedin: https://www.linkedin.com/in/henrique-franco-243912233/</p>
+<p>Github: https://github.com/a22107352</p>
+<p>Nome da cidade: Lisboa</p>
+</div>
+<script src="{% static 'portfolio/js/index.js' %}"></script>
+</body>

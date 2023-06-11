@@ -1,0 +1,25 @@
+{% block content %}
+    <h1>Criar Post</h1>
+    <form method="post" action="{% url 'criar_post' %}">
+        {% csrf_token %}
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo"><br>
+        <label for="conteudo">Conteúdo:</label><br>
+        <textarea id="conteudo" name="conteudo"></textarea><br>
+        <label for="descricao">Descrição:</label><br>
+        <textarea id="descricao" name="descricao"></textarea><br>
+        <label for="categoria">Categoria:</label><br>
+        <select id="categoria" name="categoria">
+            <option value="tecnologia">Tecnologia</option>
+            <option value="música">Música</option>
+            <option value="desporto">Desporto</option>
+        </select><br>
+        <label for="autor">Autor:</label><br>
+        <select id="autor" name="autor">
+            <option value="not_anonymous">Not Anonymous</option>
+            <option value="anonymous">Anonymous</option>
+
+        </select><br>
+        <input type="submit" value="Criar">
+    </form>
+{% endblock %}

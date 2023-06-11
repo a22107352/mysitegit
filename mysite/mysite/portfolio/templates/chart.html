@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'portfolio/css/chart.css' %}">
+<div class="chart">
+
+
+
+{% if data %}
+    <h1> Ano</h1><h2> Óbitos</h2>
+    <p>{{ data.anos }}</p>
+
+    <p>{{ data.obitos }}</p>
+{% else %}
+    <p>Falha ao recuperar a página.</p>
+{% endif %}
+<p>Source:https://www.pordata.pt/portugal/obitos+de+residentes+em+portugal+total+e+no+primeiro+ano+de+vida-15</p>
+<a class="links" href="{% url 'portfolio:index' %}">Para voltar ao portfolio click aqui</a>
+</div>

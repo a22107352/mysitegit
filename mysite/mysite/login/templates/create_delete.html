@@ -1,0 +1,65 @@
+<!-- Cadeira Form -->
+<body>
+    <h1>List of Projetos and Cadeiras</h1>
+
+    <h2>Projetos:</h2>
+    <ul>
+        {% for projeto in projetos %}
+        <li>
+          Titulo : {{ projeto.titulo }}
+            Descrição: {{ projeto.descricao }}
+     <form method="post" action="{% url 'projeto_cadeira_delete' obj_type='projeto' obj_id=projeto.id|stringformat:'s' %}">
+  {% csrf_token %}
+  <button type="submit">Delete</button>
+</form>
+        </li>
+        {% endfor %}
+    </ul>
+
+   <h2>Cadeiras:</h2>
+<ul>
+    {% for cadeira in cadeiras %}
+    <li>
+      Nome:  {{ cadeira.nome }}
+        Ranking:{{ cadeira.ranking }}
+         Cadeira:{{ cadeira.ects }}
+        {% if cadeira.id %}
+        <form method="post" action="{% url 'projeto_cadeira_delete' obj_type='cadeira' obj_id=cadeira.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+        {% else %}
+        <p>No ID available for this Cadeira</p>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+    <h1>Create Cadeiras</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="cadeira_nome">Nome:</label>
+        <input type="text" name="nome_cadeira" required>
+        <br>
+        <label for="cadeira_ranking">Ranking:</label>
+        <input type="number" name="cadeira_ranking" required>
+        <br>
+        <label for="cadeira_ects">ECTS:</label>
+        <input type="number" name="cadeira_ects" required>
+        <br>
+        <button type="submit" name="add_cadeira">Add Cadeira</button>
+    </form>
+
+    <h1>Create Projetos</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="projeto_titulo">Título:</label>
+        <input type="text" name="projeto_titulo" required>
+        <br>
+        <label for="projeto_descricao">Descrição:</label>
+        <textarea name="projeto_descricao" required></textarea>
+        <br>
+        <button type="submit" name="add_projeto">Add Projeto</button>
+    </form>
+
+    <a href="{% url 'index' %}">Pagina de desmonstração</a>
+</body>

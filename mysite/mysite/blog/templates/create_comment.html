@@ -1,0 +1,12 @@
+{% block content %}
+    <h1>Add Comment</h1>
+    <form method="post" action="{% url 'create_comment' post_id=post_id %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {{ form.conteudo.errors }}
+        <input type="hidden" name="post_id" value="{{ post_id }}">
+       <label for="{{ form.conteudo.id_for_label }}">Comment:</label>
+        {{ form.conteudo }}
+        <button type="submit">Add Comment</button>
+    </form>
+{% endblock %}

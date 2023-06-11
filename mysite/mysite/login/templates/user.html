@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Projetos and Cadeiras</title>
+</head>
+<body>
+    <h1>List of Projetos and Cadeiras</h1>
+
+    <h2>Projetos:</h2>
+    <ul>
+        {% for projeto in projetos %}
+        <li> Titulo :{{ projeto.titulo }}
+              Descrição: {{ projeto.descricao }}
+        </li>
+
+
+        {% endfor %}
+    </ul>
+
+    <h2>Cadeiras:</h2>
+    <ul>
+        {% for cadeira in cadeiras %}
+        <li> Nome:  {{ cadeira.nome }}
+        Ranking:{{ cadeira.ranking }}
+         Ects:{{ cadeira.ects }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create' %}">Criar projecto ou cadeira</a>
+<br>
+    <a href="{% url 'portfolio:index' %}">Voltar ao portfolio</a>
+</body>
+</html>
